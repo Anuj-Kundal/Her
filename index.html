@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>For You</title>
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,24 +18,27 @@
       text-decoration: none;
       font-size: 18px;
     }
+    button {
+      padding: 12px 22px;
+      font-size: 16px;
+      border: none;
+      background: #e75480;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 15px 0;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Background Music -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
-frameborder="0"
-allow="autoplay">
-</iframe>
-
 
 <h1>For You ❤️</h1>
-<p><em>(Best with sound on 🎧)</em></p>
+<p><em>(Tap the button & turn sound on 🎧)</em></p>
 
-<audio autoplay loop controls>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c3b8b2d8b4.mp3" type="audio/mpeg">
-</audio>
+<button onclick="playMusic()">▶ Play our song</button>
+
+<div id="player"></div>
 
 <p>
 I made this little place for you.  
@@ -48,6 +52,32 @@ you are loved.
 <a href="love.html">Why I Love You</a>
 <a href="comfort.html">When You Feel Low</a>
 <a href="promise.html">My Promise</a>
+
+<script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.body.appendChild(tag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '0',
+      width: '0',
+      videoId: '2Vv-BfVoq4g',
+      playerVars: {
+        autoplay: 0,
+        loop: 1,
+        playlist: '2Vv-BfVoq4g'
+      }
+    });
+  }
+
+  function playMusic() {
+    if (player) {
+      player.playVideo();
+    }
+  }
+</script>
 
 </body>
 </html>
