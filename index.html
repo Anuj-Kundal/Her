@@ -9,7 +9,7 @@
       background: #fff5f7;
       color: #333;
       text-align: center;
-      padding: 40px;
+      padding: 30px;
     }
     a {
       display: block;
@@ -18,15 +18,9 @@
       text-decoration: none;
       font-size: 18px;
     }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      background: #e75480;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      margin: 15px 0;
+    iframe {
+      margin: 20px auto;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -34,11 +28,16 @@
 <body>
 
 <h1>For You ❤️</h1>
-<p><em>(Tap the button & turn sound on 🎧)</em></p>
+<p><em>(Press play & turn sound on 🎧)</em></p>
 
-<button id="musicBtn" onclick="toggleMusic()">▶ Play our song</button>
-
-<div id="player"></div>
+<!-- YouTube Player with controls -->
+<iframe width="300" height="170"
+src="https://www.youtube.com/embed/2Vv-BfVoq4g?controls=1"
+title="Perfect - Ed Sheeran"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
 
 <p>
 I made this little place for you.  
@@ -52,44 +51,6 @@ you are loved.
 <a href="love.html">Why I Love You</a>
 <a href="comfort.html">When You Feel Low</a>
 <a href="promise.html">My Promise</a>
-
-<script>
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  document.body.appendChild(tag);
-
-  var player;
-  var isPlaying = false;
-
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '0',
-      width: '0',
-      videoId: '2Vv-BfVoq4g',
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: '2Vv-BfVoq4g'
-      }
-    });
-  }
-
-  function toggleMusic() {
-    if (!player) return;
-
-    var btn = document.getElementById("musicBtn");
-
-    if (!isPlaying) {
-      player.playVideo();
-      btn.innerText = "⏸ Pause song";
-      isPlaying = true;
-    } else {
-      player.pauseVideo();
-      btn.innerText = "▶ Play our song";
-      isPlaying = false;
-    }
-  }
-</script>
 
 </body>
 </html>
