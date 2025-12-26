@@ -10,13 +10,17 @@
       color: #333;
       text-align: center;
       padding: 30px;
+      scroll-behavior: smooth;
     }
-    a {
-      display: block;
-      margin: 15px;
+    section {
+      margin: 80px 0;
+    }
+    nav a {
+      margin: 10px;
       color: #e75480;
       text-decoration: none;
       font-size: 18px;
+      font-weight: bold;
     }
     iframe {
       margin: 20px auto;
@@ -27,10 +31,7 @@
 
 <body>
 
-<h1>For You ❤️</h1>
-<p><em>(Press play & turn sound on 🎧)</em></p>
-
-<!-- YouTube Player with controls -->
+<!-- MUSIC (plays once, never reloads) -->
 <iframe width="300" height="170"
 src="https://www.youtube.com/embed/2Vv-BfVoq4g?controls=1"
 title="Perfect - Ed Sheeran"
@@ -39,18 +40,72 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen>
 </iframe>
 
-<p>
-I made this little place for you.  
-Not to explain things.  
-Not to fix anything.  
+<p><em>(Press play & keep scrolling 🎧)</em></p>
 
-Just to remind you —  
-you are loved.
-</p>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#love">Why I Love You</a>
+  <a href="#comfort">When You Feel Low</a>
+  <a href="#promise">My Promise</a>
+</nav>
 
-<a href="love.html">Why I Love You</a>
-<a href="comfort.html">When You Feel Low</a>
-<a href="promise.html">My Promise</a>
+<!-- HOME -->
+<section id="home">
+  <h1>For You ❤️</h1>
+  <p>
+    I made this little place for you.  
+    Not to explain things.  
+    Not to fix anything.  
+    <br><br>
+    Just to remind you —  
+    you are loved.
+  </p>
+</section>
+
+<!-- WHY I LOVE YOU -->
+<section id="love">
+  <h2>Why I Love You ❤️</h2>
+  <p>
+    I love you not because you’re perfect,  
+    but because you’re real.  
+    <br><br>
+    You feel deeply.  
+    You care honestly.  
+    You love sincerely.  
+    <br><br>
+    And that’s rare.  
+    That’s you.
+  </p>
+</section>
+
+<!-- COMFORT -->
+<section id="comfort">
+  <h2>When You Feel Low 🌙</h2>
+  <p>
+    If your heart feels heavy,  
+    if today feels too much,  
+    <br><br>
+    please remember —  
+    you don’t have to be strong all the time.  
+    <br><br>
+    You’re allowed to feel.  
+    And you’re not alone.
+  </p>
+</section>
+
+<!-- PROMISE -->
+<section id="promise">
+  <h2>My Promise 🤍</h2>
+  <p>
+    I promise to listen more.  
+    To understand better.  
+    To love gently.  
+    <br><br>
+    I may not be perfect,  
+    but I will always choose you.
+  </p>
+</section>
 
 </body>
 </html>
