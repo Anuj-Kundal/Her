@@ -19,7 +19,7 @@
       font-size: 18px;
     }
     button {
-      padding: 12px 22px;
+      padding: 12px 24px;
       font-size: 16px;
       border: none;
       background: #e75480;
@@ -36,7 +36,7 @@
 <h1>For You ❤️</h1>
 <p><em>(Tap the button & turn sound on 🎧)</em></p>
 
-<button onclick="playMusic()">▶ Play our song</button>
+<button id="musicBtn" onclick="toggleMusic()">▶ Play our song</button>
 
 <div id="player"></div>
 
@@ -59,6 +59,8 @@ you are loved.
   document.body.appendChild(tag);
 
   var player;
+  var isPlaying = false;
+
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       height: '0',
@@ -72,9 +74,19 @@ you are loved.
     });
   }
 
-  function playMusic() {
-    if (player) {
+  function toggleMusic() {
+    if (!player) return;
+
+    var btn = document.getElementById("musicBtn");
+
+    if (!isPlaying) {
       player.playVideo();
+      btn.innerText = "⏸ Pause song";
+      isPlaying = true;
+    } else {
+      player.pauseVideo();
+      btn.innerText = "▶ Play our song";
+      isPlaying = false;
     }
   }
 </script>
