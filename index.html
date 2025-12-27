@@ -93,11 +93,7 @@
 </head>
 
 <body>
-  <script>
-  window.onload = function () {
-    window.scrollTo(0, 0);
-  };
-</script>
+ 
 
 
 <!-- MUSIC (plays once, never reloads) -->
@@ -234,6 +230,12 @@ allowfullscreen>
     And you are important to me.</strong>
   </p>
 </section>
+  <script>
+  window.onload = () => {
+    setTimeout(() => window.scrollTo(0, 0), 50);
+  };
+</script>
+
 
 </body>
 </html>
